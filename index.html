@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles to extend Tailwind */
+        /* Custom styles to extend Tailwind - SANS @apply */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #FFFBF5;
@@ -22,18 +22,77 @@
         .hero-bg {
             background-color: #F7E4D4;
         }
+        
+        /* Styles de boutons corrigés */
         .btn-primary {
-            /* REVERTED: Bouton principal (solide, arrondi) */
-            @apply bg-[#9F7A5E] text-white font-bold py-3 px-8 rounded-full transition-transform duration-300 hover:scale-105 hover:bg-[#8B6A4E];
+            background-color: #9F7A5E;
+            color: white;
+            font-weight: 700; /* bold */
+            padding-top: 0.75rem; /* py-3 */
+            padding-bottom: 0.75rem; /* py-3 */
+            padding-left: 2rem; /* px-8 */
+            padding-right: 2rem; /* px-8 */
+            border-radius: 9999px; /* rounded-full */
+            transition-property: transform, background-color;
+            transition-duration: 300ms;
+            display: inline-block; /* Assure un bon affichage */
+            text-decoration: none; /* Au cas où c'est un <a> */
         }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            background-color: #8B6A4E;
+        }
+
         .btn-secondary {
-            /* Example for a secondary button, if needed */
-            @apply bg-white text-[#D5A07B] border border-[#D5A07B] font-bold py-3 px-8 rounded-full transition-all duration-300 hover:bg-[#D5A07B] hover:text-white;
+            background-color: white;
+            color: #D5A07B;
+            border: 1px solid #D5A07B;
+            font-weight: 700;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border-radius: 9999px; /* rounded-full */
+            transition-property: all;
+            transition-duration: 300ms;
         }
+        .btn-secondary:hover {
+            background-color: #D5A07B;
+            color: white;
+        }
+
+        /* Style de carte corrigé */
         .card {
-            @apply bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-2xl hover:-translate-y-2;
+            background-color: white;
+            border-radius: 1rem; /* rounded-2xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            overflow: hidden;
+            transition-property: box-shadow, transform;
+            transition-duration: 300ms;
         }
-        /* Style for product image containers to ensure consistent height and proper scaling */
+        .card:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+            transform: translateY(-0.5rem); /* -translate-y-2 */
+        }
+        
+        /* Style pour l'encadrement PRIX + BOUTON */
+        .price-order-box {
+            border-width: 2px;
+            border-color: #D5A07B; /* Couleur de la bordure */
+            border-radius: 0.5rem; /* rounded-lg */
+            padding: 1rem; /* p-4 */
+            margin-top: 1rem; /* mt-4 */
+        }
+
+        /* Style pour bouton de langue corrigé */
+        .lang-btn {
+            cursor: pointer;
+        }
+        .lang-btn:hover {
+            color: #D5A07B;
+        }
+
+        /* Style pour l'image produit */
         .product-image-container {
             height: 320px; /* Set a fixed height for consistent card size */
             display: flex;
@@ -46,16 +105,6 @@
             height: 100%; /* Make the image fill the container's height */
             object-fit: contain; /* Show entire image, respect aspect ratio */
             max-width: 100%; /* Ensure image doesn't overflow container width */
-        }
-
-        /* NOUVEAU STYLE POUR L'ENCADREMENT PRIX + BOUTON */
-        .price-order-box {
-            @apply border-2 border-[#D5A07B] rounded-lg p-4 mt-4; /* Bordure, coins arrondis, padding et marge supérieure */
-        }
-
-        /* Helper class for language switching */
-        .lang-btn {
-            @apply cursor-pointer hover:text-[#D5A07B];
         }
 
         /* Ensure logo is responsive and clear */
@@ -151,6 +200,7 @@
                     <p lang="fr" class="text-gray-600 hidden">Fait main avec amour, pour des moments que vous chérirez.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+                    <!-- CARTE PRODUIT 1 -->
                     <div class="card">
                         <div class="product-image-container">
                             <img src="images/orchid-box.jpg" alt="Orchid Elegance Box">
@@ -162,6 +212,7 @@
                             <p lang="en" class="text-gray-600 mb-4 h-24">Stunning white orchids presented in a sophisticated, clear display box. A timeless gift of pure elegance.</p>
                             <p lang="fr" class="text-gray-600 mb-4 h-24 hidden">Superbes orchidées blanches présentées dans une boîte de présentation transparente et sophistiquée. Un cadeau intemporel d'une pure élégance.</p>
                             
+                            <!-- MODIFICATION ICI: Encadrement ajouté -->
                             <div class="price-order-box">
                                 <p class="text-2xl font-bold text-[#5C4033] mb-4">$50.00</p>
                                 <button data-product-en="Orchid Elegance Box" data-product-fr="Boîte Élégance Orchidée" class="btn-primary w-full open-modal-btn">
@@ -171,6 +222,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- CARTE PRODUIT 2 -->
                     <div class="card">
                         <div class="product-image-container">
                             <img src="images/rose-bouquet.jpg" alt="Rose Blossom Bouquet">
@@ -182,8 +234,9 @@
                             <p lang="en" class="text-gray-600 mb-4 h-24">A beautiful bouquet of handcrafted chocolate roses in delicate shades of pink and cream, wrapped to perfection.</p>
                             <p lang="fr" class="text-gray-600 mb-4 h-24 hidden">Un magnifique bouquet de roses en chocolat artisanales dans de délicates nuances de rose et de crème, parfaitement emballé.</p>
                             
+                             <!-- MODIFICATION ICI: Encadrement ajouté -->
                             <div class="price-order-box">
-                                <p class="text-2xl font-bold text-[#5C4033] mb-4">$50.00</p>
+                                 <p class="text-2xl font-bold text-[#5C4033] mb-4">$50.00</p>
                                 <button data-product-en="Rose Blossom Bouquet" data-product-fr="Bouquet de Roses en Fleurs" class="btn-primary w-full open-modal-btn">
                                     <span lang="en" class="uppercase">Order Now</span>
                                     <span lang="fr" class="hidden uppercase">Commander</span>
