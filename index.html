@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloom & Bite | Floral Bouquets & Sweet Treats</title>
+    
+    <!-- Titles -->
+    <title lang="en">Bloom & Bite | Floral Bouquets & Sweet Treats</title>
+    <title lang="fr" class="hidden">Bloom & Bite | Bouquets Floraux & Douceurs</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -42,6 +46,11 @@
             object-fit: contain; /* Show entire image, respect aspect ratio */
             max-width: 100%; /* Ensure image doesn't overflow container width */
         }
+
+        /* Helper class for language switching */
+        .lang-btn {
+            @apply cursor-pointer hover:text-[#D5A07B];
+        }
     </style>
 </head>
 <body>
@@ -55,9 +64,19 @@
                 <span class="text-2xl font-bold text-[#5C4033] hidden sm:inline">Bloom & Bite</span>
             </div>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="text-gray-700 hover:text-[#D5A07B]">About Us</a>
-                <a href="#creations" class="text-gray-700 hover:text-[#D5A07B]">Our Creations</a>
-                <a href="#contact" class="text-gray-700 hover:text-[#D5A07B]">Contact</a>
+                <a href="#about" lang="en" class="text-gray-700 hover:text-[#D5A07B]">About Us</a>
+                <a href="#creations" lang="en" class="text-gray-700 hover:text-[#D5A07B]">Our Creations</a>
+                <a href="#contact" lang="en" class="text-gray-700 hover:text-[#D5A07B]">Contact</a>
+                
+                <a href="#about" lang="fr" class="text-gray-700 hover:text-[#D5A07B] hidden">À Propos</a>
+                <a href="#creations" lang="fr" class="text-gray-700 hover:text-[#D5A07B] hidden">Nos Créations</a>
+                <a href="#contact" lang="fr" class="text-gray-700 hover:text-[#D5A07B] hidden">Contact</a>
+            </div>
+            <!-- Language Switcher -->
+            <div class="flex items-center space-x-2">
+                <button id="lang-en" class="lang-btn font-bold">EN</button>
+                <span>/</span>
+                <button id="lang-fr" class="lang-btn text-gray-500">FR</button>
             </div>
             <button class="md:hidden" id="mobile-menu-button">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -65,9 +84,13 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-700 hover:text-[#D5A07B]">About Us</a>
-            <a href="#creations" class="block py-2 text-gray-700 hover:text-[#D5A07B]">Our Creations</a>
-            <a href="#contact" class="block py-2 text-gray-700 hover:text-[#D5A07B]">Contact</a>
+            <a href="#about" lang="en" class="block py-2 text-gray-700 hover:text-[#D5A07B]">About Us</a>
+            <a href="#creations" lang="en" class="block py-2 text-gray-700 hover:text-[#D5A07B]">Our Creations</a>
+            <a href="#contact" lang="en" class="block py-2 text-gray-700 hover:text-[#D5A07B]">Contact</a>
+
+            <a href="#about" lang="fr" class="block py-2 text-gray-700 hover:text-[#D5A07B] hidden">À Propos</a>
+            <a href="#creations" lang="fr" class="block py-2 text-gray-700 hover:text-[#D5A07B] hidden">Nos Créations</a>
+            <a href="#contact" lang="fr" class="block py-2 text-gray-700 hover:text-[#D5A07B] hidden">Contact</a>
         </div>
     </header>
 
@@ -78,9 +101,14 @@
                 <div class="max-w-3xl mx-auto">
                      <!-- LOGO - Make sure 'Logo.jpg' exists in your 'images' folder -->
                     <img src="images/Logo.jpg" alt="Bloom & Bite Logo" class="mx-auto h-64 w-64 rounded-full mb-6">
-                    <h1 class="font-display text-5xl md:text-7xl font-bold text-[#5C4033] mb-4">Where Flowers Meet Flavor</h1>
-                    <p class="text-lg text-gray-700 mb-8">Discover our unique bouquets, artfully combining fresh, beautiful blooms with delicious, handcrafted treats. The perfect gift for any occasion.</p>
-                    <a href="#creations" class="btn-primary">Shop Our Creations</a>
+                    <h1 lang="en" class="font-display text-5xl md:text-7xl font-bold text-[#5C4033] mb-4">Where Flowers Meet Flavor</h1>
+                    <h1 lang="fr" class="font-display text-5xl md:text-7xl font-bold text-[#5C4033] mb-4 hidden">Quand les Fleurs Rencontrent les Saveurs</h1>
+                    
+                    <p lang="en" class="text-lg text-gray-700 mb-8">Discover our unique bouquets, artfully combining fresh, beautiful blooms with delicious, handcrafted treats. The perfect gift for any occasion.</p>
+                    <p lang="fr" class="text-lg text-gray-700 mb-8 hidden">Découvrez nos bouquets uniques, alliant avec art des fleurs fraîches et magnifiques à de délicieuses friandises artisanales. Le cadeau parfait pour toute occasion.</p>
+                    
+                    <a href="#creations" lang="en" class="btn-primary">Shop Our Creations</a>
+                    <a href="#creations" lang="fr" class="btn-primary hidden">Voir Nos Créations</a>
                 </div>
             </div>
         </section>
@@ -94,9 +122,14 @@
                         <img src="https://placehold.co/600x400/D5A07B/FFFFFF?text=Our+Story" alt="Artisan making a bouquet" class="rounded-2xl shadow-xl w-full">
                     </div>
                     <div class="md:w-1/2 text-center md:text-left">
-                        <h2 class="font-display text-4xl font-bold mb-4">From a Dream to Your Doorstep</h2>
-                        <p class="text-gray-600 mb-4 leading-relaxed">Bloom & Bite started with a simple idea: why choose between flowers and sweets when you can have both? We are a small team of florists and bakers passionate about creating unforgettable gifts. Each bouquet is a little bundle of joy, made with love, care, and the freshest ingredients.</p>
-                        <p class="text-gray-600 leading-relaxed">Inspired by our own cuddly mascot, we believe every gift should bring a smile, a moment of delight, and a delicious bite.</p>
+                        <h2 lang="en" class="font-display text-4xl font-bold mb-4">From a Dream to Your Doorstep</h2>
+                        <h2 lang="fr" class="font-display text-4xl font-bold mb-4 hidden">D'un Rêve à Votre Porte</h2>
+                        
+                        <p lang="en" class="text-gray-600 mb-4 leading-relaxed">Bloom & Bite started with a simple idea: why choose between flowers and sweets when you can have both? We are a small team of florists and bakers passionate about creating unforgettable gifts. Each bouquet is a little bundle of joy, made with love, care, and the freshest ingredients.</p>
+                        <p lang="fr" class="text-gray-600 mb-4 leading-relaxed hidden">Bloom & Bite a commencé par une idée simple : pourquoi choisir entre des fleurs et des friandises quand on peut avoir les deux ? Nous sommes une petite équipe de fleuristes et de pâtissiers passionnés par la création de cadeaux inoubliables. Chaque bouquet est un petit concentré de joie, fait avec amour, soin et les ingrédients les plus frais.</p>
+                        
+                        <p lang="en" class="text-gray-600 leading-relaxed">Inspired by our own cuddly mascot, we believe every gift should bring a smile, a moment of delight, and a delicious bite.</p>
+                        <p lang="fr" class="text-gray-600 leading-relaxed hidden">Inspirés par notre propre mascotte câline, nous croyons que chaque cadeau doit apporter un sourire, un moment de plaisir et une délicieuse bouchée.</p>
                     </div>
                 </div>
             </div>
@@ -106,8 +139,11 @@
         <section id="creations" class="hero-bg py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="font-display text-4xl font-bold mb-2">Our Signature Creations</h2>
-                    <p class="text-gray-600">Handcrafted with love, for moments you'll cherish.</p>
+                    <h2 lang="en" class="font-display text-4xl font-bold mb-2">Our Signature Creations</h2>
+                    <h2 lang="fr" class="font-display text-4xl font-bold mb-2 hidden">Nos Créations Signatures</h2>
+                    
+                    <p lang="en" class="text-gray-600">Handcrafted with love, for moments you'll cherish.</p>
+                    <p lang="fr" class="text-gray-600 hidden">Fait main avec amour, pour des moments que vous chérirez.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
                     <!-- Creation Card 1 -->
@@ -116,10 +152,17 @@
                             <img src="images/orchid-box.jpg" alt="Orchid Elegance Box">
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-2xl font-bold mb-2">Orchid Elegance Box</h3>
-                            <p class="text-gray-600 mb-4 h-24">Stunning white orchids presented in a sophisticated, clear display box. A timeless gift of pure elegance.</p>
+                            <h3 lang="en" class="text-2xl font-bold mb-2">Orchid Elegance Box</h3>
+                            <h3 lang="fr" class="text-2xl font-bold mb-2 hidden">Boîte Élégance Orchidée</h3>
+                            
+                            <p lang="en" class="text-gray-600 mb-4 h-24">Stunning white orchids presented in a sophisticated, clear display box. A timeless gift of pure elegance.</p>
+                            <p lang="fr" class="text-gray-600 mb-4 h-24 hidden">Superbes orchidées blanches présentées dans une boîte de présentation transparente et sophistiquée. Un cadeau intemporel d'une pure élégance.</p>
+                            
                             <p class="text-2xl font-bold text-[#5C4033] mb-4">$50.00</p>
-                            <button data-product="Orchid Elegance Box" class="btn-primary w-full open-modal-btn">Inquire Now</button>
+                            <button data-product-en="Orchid Elegance Box" data-product-fr="Boîte Élégance Orchidée" class="btn-primary w-full open-modal-btn">
+                                <span lang="en">Inquire Now</span>
+                                <span lang="fr" class="hidden">Demander des Infos</span>
+                            </button>
                         </div>
                     </div>
                     <!-- Creation Card 2 -->
@@ -128,10 +171,17 @@
                             <img src="images/rose-bouquet.jpg" alt="Rose Blossom Bouquet">
                         </div>
                         <div class="p-6 text-center">
-                            <h3 class="text-2xl font-bold mb-2">Rose Blossom Bouquet</h3>
-                            <p class="text-gray-600 mb-4 h-24">A beautiful bouquet of handcrafted chocolate roses in delicate shades of pink and cream, wrapped to perfection.</p>
+                            <h3 lang="en" class="text-2xl font-bold mb-2">Rose Blossom Bouquet</h3>
+                            <h3 lang="fr" class="text-2xl font-bold mb-2 hidden">Bouquet de Roses en Fleurs</h3>
+                            
+                            <p lang="en" class="text-gray-600 mb-4 h-24">A beautiful bouquet of handcrafted chocolate roses in delicate shades of pink and cream, wrapped to perfection.</p>
+                            <p lang="fr" class="text-gray-600 mb-4 h-24 hidden">Un magnifique bouquet de roses en chocolat artisanales dans de délicates nuances de rose et de crème, parfaitement emballé.</p>
+                            
                              <p class="text-2xl font-bold text-[#5C4033] mb-4">$50.00</p>
-                            <button data-product="Rose Blossom Bouquet" class="btn-primary w-full open-modal-btn">Inquire Now</button>
+                            <button data-product-en="Rose Blossom Bouquet" data-product-fr="Bouquet de Roses en Fleurs" class="btn-primary w-full open-modal-btn">
+                                <span lang="en">Inquire Now</span>
+                                <span lang="fr" class="hidden">Demander des Infos</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -142,8 +192,11 @@
         <section id="contact" class="py-24">
             <div class="container mx-auto px-6 text-center">
                  <div class="max-w-2xl mx-auto">
-                    <h2 class="font-display text-4xl font-bold mb-4">Get In Touch</h2>
-                    <p class="text-gray-600 mb-6">Have a special request or just want to say hello? Fill out the form below or email us directly.</p>
+                    <h2 lang="en" class="font-display text-4xl font-bold mb-4">Get In Touch</h2>
+                    <h2 lang="fr" class="font-display text-4xl font-bold mb-4 hidden">Contactez-Nous</h2>
+                    
+                    <p lang="en" class="text-gray-600 mb-6">Have a special request or just want to say hello? Fill out the form below or email us directly.</p>
+                    <p lang="fr" class="text-gray-600 mb-6 hidden">Avez-vous une demande spéciale ou voulez-vous simplement dire bonjour ? Remplissez le formulaire ci-dessous ou envoyez-nous un courriel directement.</p>
 
                     <div class="mb-8 p-4 bg-rose-50 rounded-lg">
                         <a href="mailto:bloom.and.bite.mtl@gmail.com" class="font-semibold text-[#5C4033] hover:text-[#D5A07B]">bloom.and.bite.mtl@gmail.com</a>
@@ -152,23 +205,30 @@
                     <!-- UPDATED action URL for Contact Form -->
                     <form action="https://formspree.io/f/xkgpgppb" method="POST" class="space-y-6 text-left">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <label for="name" lang="en" class="block text-sm font-medium text-gray-700">Name</label>
+                            <label for="name" lang="fr" class="block text-sm font-medium text-gray-700 hidden">Nom</label>
                             <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-[#D5A07B] focus:border-[#D5A07B]">
                         </div>
                          <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <label for="email" lang="en" class="block text-sm font-medium text-gray-700">Email</label>
+                            <label for="email" lang="fr" class="block text-sm font-medium text-gray-700 hidden">Courriel</label>
                             <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-[#D5A07B] focus:border-[#D5A07B]">
                         </div>
                         <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <label for="phone" lang="en" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <label for="phone" lang="fr" class="block text-sm font-medium text-gray-700 hidden">Numéro de Téléphone</label>
                             <input type="tel" id="phone" name="phone" class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-[#D5A07B] focus:border-[#D5A07B]">
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <label for="message" lang="en" class="block text-sm font-medium text-gray-700">Message</label>
+                            <label for="message" lang="fr" class="block text-sm font-medium text-gray-700 hidden">Message</label>
                             <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-[#D5A07B] focus:border-[#D5A07B]"></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn-primary w-full md:w-auto">Send Message</button>
+                            <button type="submit" class="btn-primary w-full md:w-auto">
+                                <span lang="en">Send Message</span>
+                                <span lang="fr" class="hidden">Envoyer le Message</span>
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -179,7 +239,8 @@
     <!-- Footer -->
     <footer class="bg-[#F7E4D4] py-8">
         <div class="container mx-auto px-6 text-center text-gray-600">
-            <p>&copy; 2025 Bloom & Bite. All Rights Reserved.</p>
+            <p lang="en">&copy; 2025 Bloom & Bite. All Rights Reserved.</p>
+            <p lang="fr" class="hidden">&copy; 2025 Bloom & Bite. Tous Droits Réservés.</p>
              <div class="flex justify-center space-x-4 mt-4">
                 <a href="#" class="hover:text-[#D5A07B]"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
                 <a href="#" class="hover:text-[#D5A07B]"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
@@ -194,31 +255,44 @@
             <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-            <h3 class="font-display text-2xl font-bold mb-2">Inquiry for <span id="modal-product-name"></span></h3>
-            <p class="text-gray-600 mb-6">Please provide your details below. We'll contact you shortly to finalize your order!</p>
+            <h3 class="font-display text-2xl font-bold mb-2">
+                <span lang="en">Inquiry for </span>
+                <span lang="fr" class="hidden">Demande pour </span>
+                <span id="modal-product-name"></span>
+            </h3>
+            <p lang="en" class="text-gray-600 mb-6">Please provide your details below. We'll contact you shortly to finalize your order!</p>
+            <p lang="fr" class="text-gray-600 mb-6 hidden">Veuillez fournir vos coordonnées ci-dessous. Nous vous contacterons sous peu pour finaliser votre commande !</p>
             
             <!-- UPDATED action URL for Inquiry Form -->
             <form action="https://formspree.io/f/xvgvgvvq" method="POST" class="space-y-4">
                 <input type="hidden" id="product_inquiry" name="product_inquiry">
                 <div>
-                    <label for="modal-name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <label for="modal-name" lang="en" class="block text-sm font-medium text-gray-700">Name</label>
+                    <label for="modal-name" lang="fr" class="block text-sm font-medium text-gray-700 hidden">Nom</label>
                     <input type="text" id="modal-name" name="name" required class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-[#D5A07B] focus:border-[#D5A0TTC]8">
                 </div>
                  <div>
-                    <label for="modal-email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <label for="modal-email" lang="en" class="block text-sm font-medium text-gray-700">Email</label>
+                    <label for="modal-email" lang="fr" class="block text-sm font-medium text-gray-700 hidden">Courriel</label>
                     <input type="email" id="modal-email" name="email" class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-[#D5A07B] focus:border-[#D5A07B]">
                 </div>
                 <div>
-                    <label for="modal-phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <label for="modal-phone" lang="en" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <label for="modal-phone" lang="fr" class="block text-sm font-medium text-gray-700 hidden">Numéro de Téléphone</label>
                     <input type="tel" id="modal-phone" name="phone" class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-[#D5A07B] focus:border-[#D5A07B]">
                 </div>
-                 <p class="text-xs text-gray-500 text-center">Please provide at least one contact method (Email or Phone).</p>
+                 <p lang="en" class="text-xs text-gray-500 text-center">Please provide at least one contact method (Email or Phone).</p>
+                 <p lang="fr" class="text-xs text-gray-500 text-center hidden">Veuillez fournir au moins une méthode de contact (Courriel ou Téléphone).</p>
                 <div>
-                    <label for="modal-message" class="block text-sm font-medium text-gray-700">Message (Optional)</label>
+                    <label for="modal-message" lang="en" class="block text-sm font-medium text-gray-700">Message (Optional)</label>
+                    <label for="modal-message" lang="fr" class="block text-sm font-medium text-gray-700 hidden">Message (Optionnel)</label>
                     <textarea id="modal-message" name="message" rows="3" class="mt-1 block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-[#D5A07B] focus:border-[#D5A07B]"></textarea>
                 </div>
                 <div class="text-center pt-2">
-                    <button type="submit" class="btn-primary w-full">Submit Inquiry</button>
+                    <button type="submit" class="btn-primary w-full">
+                        <span lang="en">Submit Inquiry</span>
+                        <span lang="fr" class="hidden">Soumettre la Demande</span>
+                    </button>
                 </div>
             </form>
         </div>
@@ -226,6 +300,48 @@
 
 
     <script>
+        // --- Language Switching ---
+        const langEnBtn = document.getElementById('lang-en');
+        const langFrBtn = document.getElementById('lang-fr');
+        let currentLang = 'en'; // Default language
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+
+            // Toggle button styles
+            if (lang === 'en') {
+                langEnBtn.classList.add('font-bold');
+                langEnBtn.classList.remove('text-gray-500');
+                langFrBtn.classList.remove('font-bold');
+                langFrBtn.classList.add('text-gray-500');
+            } else {
+                langEnBtn.classList.remove('font-bold');
+                langEnBtn.classList.add('text-gray-500');
+                langFrBtn.classList.add('font-bold');
+                langFrBtn.classList.remove('text-gray-500');
+            }
+
+            // Get all elements with lang attributes
+            const enElements = document.querySelectorAll('[lang="en"]');
+            const frElements = document.querySelectorAll('[lang="fr"]');
+
+            if (lang === 'en') {
+                enElements.forEach(el => el.classList.remove('hidden'));
+                frElements.forEach(el => el.classList.add('hidden'));
+            } else {
+                enElements.forEach(el => el.classList.add('hidden'));
+                frElements.forEach(el => el.classList.remove('hidden'));
+            }
+        }
+
+        langEnBtn.addEventListener('click', () => setLanguage('en'));
+        langFrBtn.addEventListener('click', () => setLanguage('fr'));
+        
+        // Set initial language on page load
+        setLanguage('en');
+
+
         // --- Mobile Menu Toggle ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -241,9 +357,17 @@
         const modalProductName = document.getElementById('modal-product-name');
         const hiddenProductInput = document.getElementById('product_inquiry');
 
-        function openModal(productName) {
+        function openModal(button) { // Pass the whole button
+            const productNameEn = button.getAttribute('data-product-en');
+            const productNameFr = button.getAttribute('data-product-fr');
+            
+            // Set product name based on current language
+            const productName = (currentLang === 'en') ? productNameEn : productNameFr;
+            
             modalProductName.textContent = productName;
+            // Send the product name in the currently selected language to the form
             hiddenProductInput.value = productName;
+
             inquiryModal.classList.remove('hidden');
             // Animate in
             setTimeout(() => {
@@ -263,8 +387,7 @@
 
         openModalBtns.forEach(button => {
             button.addEventListener('click', () => {
-                const productName = button.getAttribute('data-product');
-                openModal(productName);
+                openModal(button); // Pass the button itself
             });
         });
 
