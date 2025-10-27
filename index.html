@@ -23,16 +23,12 @@
             background-color: #F7E4D4;
         }
         .btn-primary {
-            /* Bouton principal (solide) */
-            @apply bg-[#9F7A5E] text-white font-bold py-3 px-8 rounded-lg transition-transform duration-300 hover:scale-105 hover:bg-[#8B6A4E];
-        }
-        /* NOUVEAU STYLE ICI POUR LE BOUTON "ENCADRÉ" */
-        .btn-outline {
-            @apply bg-transparent border-2 border-[#9F7A5E] text-[#9F7A5E] font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-[#9F7A5E] hover:text-white;
+            /* REVERTED: Bouton principal (solide, arrondi) */
+            @apply bg-[#9F7A5E] text-white font-bold py-3 px-8 rounded-full transition-transform duration-300 hover:scale-105 hover:bg-[#8B6A4E];
         }
         .btn-secondary {
             /* Example for a secondary button, if needed */
-            @apply bg-white text-[#D5A07B] border border-[#D5A07B] font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-[#D5A07B] hover:text-white;
+            @apply bg-white text-[#D5A07B] border border-[#D5A07B] font-bold py-3 px-8 rounded-full transition-all duration-300 hover:bg-[#D5A07B] hover:text-white;
         }
         .card {
             @apply bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-2xl hover:-translate-y-2;
@@ -50,6 +46,11 @@
             height: 100%; /* Make the image fill the container's height */
             object-fit: contain; /* Show entire image, respect aspect ratio */
             max-width: 100%; /* Ensure image doesn't overflow container width */
+        }
+
+        /* NOUVEAU STYLE POUR L'ENCADREMENT PRIX + BOUTON */
+        .price-order-box {
+            @apply border-2 border-[#D5A07B] rounded-lg p-4 mt-4; /* Bordure, coins arrondis, padding et marge supérieure */
         }
 
         /* Helper class for language switching */
@@ -161,11 +162,13 @@
                             <p lang="en" class="text-gray-600 mb-4 h-24">Stunning white orchids presented in a sophisticated, clear display box. A timeless gift of pure elegance.</p>
                             <p lang="fr" class="text-gray-600 mb-4 h-24 hidden">Superbes orchidées blanches présentées dans une boîte de présentation transparente et sophistiquée. Un cadeau intemporel d'une pure élégance.</p>
                             
-                            <p class="text-2xl font-bold text-[#5C4033] mb-4">$50.00</p>
-                            <button data-product-en="Orchid Elegance Box" data-product-fr="Boîte Élégance Orchidée" class="btn-outline w-full open-modal-btn">
-                                <span lang="en" class="uppercase">Order Now</span>
-                                <span lang="fr" class="hidden uppercase">Commander</span>
-                            </button>
+                            <div class="price-order-box">
+                                <p class="text-2xl font-bold text-[#5C4033] mb-4">$50.00</p>
+                                <button data-product-en="Orchid Elegance Box" data-product-fr="Boîte Élégance Orchidée" class="btn-primary w-full open-modal-btn">
+                                    <span lang="en" class="uppercase">Order Now</span>
+                                    <span lang="fr" class="hidden uppercase">Commander</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="card">
@@ -179,11 +182,13 @@
                             <p lang="en" class="text-gray-600 mb-4 h-24">A beautiful bouquet of handcrafted chocolate roses in delicate shades of pink and cream, wrapped to perfection.</p>
                             <p lang="fr" class="text-gray-600 mb-4 h-24 hidden">Un magnifique bouquet de roses en chocolat artisanales dans de délicates nuances de rose et de crème, parfaitement emballé.</p>
                             
-                             <p class="text-2xl font-bold text-[#5C4033] mb-4">$50.00</p>
-                             <button data-product-en="Rose Blossom Bouquet" data-product-fr="Bouquet de Roses en Fleurs" class="btn-outline w-full open-modal-btn">
-                                <span lang="en" class="uppercase">Order Now</span>
-                                <span lang="fr" class="hidden uppercase">Commander</span>
-                            </button>
+                            <div class="price-order-box">
+                                <p class="text-2xl font-bold text-[#5C4033] mb-4">$50.00</p>
+                                <button data-product-en="Rose Blossom Bouquet" data-product-fr="Bouquet de Roses en Fleurs" class="btn-primary w-full open-modal-btn">
+                                    <span lang="en" class="uppercase">Order Now</span>
+                                    <span lang="fr" class="hidden uppercase">Commander</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
