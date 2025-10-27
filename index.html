@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Titles --><title lang="en">Bloom & Bite | Floral Bouquets & Sweet Treats</title>
+    <title lang="en">Bloom & Bite | Floral Bouquets & Sweet Treats</title>
     <title lang="fr" class="hidden">Bloom & Bite | Bouquets Floraux & Douceurs</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -58,15 +58,16 @@
             max-width: 100%;
             height: auto;
             display: block; /* Removes extra space below image */
+            object-fit: cover; /* Ensures the image covers the area, good for circles */
         }
     </style>
 </head>
 <body>
 
-    <!-- Header & Navigation --><header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <!-- LOGO --><img src="images/Logo.jpg" alt="Bloom & Bite Logo" class="h-14 w-14 rounded-full logo-img">
+                <img src="images/Logo.png" alt="Bloom & Bite Logo" class="h-14 w-14 rounded-full logo-img">
                 <span class="text-2xl font-bold text-[#5C4033] hidden sm:inline">Bloom & Bite</span>
             </div>
             <div class="hidden md:flex items-center space-x-8">
@@ -78,7 +79,7 @@
                 <a href="#creations" lang="fr" class="text-gray-700 hover:text-[#D5A07B] nav-link hidden">Nos Créations</a>
                 <a href="#contact" lang="fr" class="text-gray-700 hover:text-[#D5A07B] nav-link hidden">Contact</a>
             </div>
-            <!-- Language Switcher --><div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-2">
                 <button id="lang-en" class="lang-btn font-bold">EN</button>
                 <span>/</span>
                 <button id="lang-fr" class="lang-btn text-gray-500">FR</button>
@@ -87,7 +88,7 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
-        <!-- Mobile Menu --><div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#about" lang="en" class="block py-2 text-gray-700 hover:text-[#D5A07B] mobile-nav-link">About Us</a>
             <a href="#creations" lang="en" class="block py-2 text-gray-700 hover:text-[#D5A07B] mobile-nav-link">Our Creations</a>
             <a href="#contact" lang="en" class="block py-2 text-gray-700 hover:text-[#D5A07B] mobile-nav-link">Contact</a>
@@ -99,10 +100,10 @@
     </header>
 
     <main>
-        <!-- Hero Section --><section class="hero-bg py-20">
+        <section class="hero-bg py-20">
             <div class="container mx-auto px-6 text-center">
                 <div class="max-w-3xl mx-auto">
-                     <!-- LOGO --><img src="images/Logo.jpg" alt="Bloom & Bite Logo" class="mx-auto h-64 w-64 rounded-full mb-6 logo-img">
+                     <img src="images/Logo.png" alt="Bloom & Bite Logo" class="mx-auto h-64 w-64 rounded-full mb-6 logo-img">
                     <h1 lang="en" class="font-display text-5xl md:text-7xl font-bold text-[#5C4033] mb-4">Where Flowers Meet Flavor</h1>
                     <h1 lang="fr" class="font-display text-5xl md:text-7xl font-bold text-[#5C4033] mb-4 hidden">Quand les Fleurs Rencontrent les Saveurs</h1>
                     
@@ -115,11 +116,11 @@
             </div>
         </section>
 
-        <!-- About Us Section --><section id="about" class="py-24">
+        <section id="about" class="py-24">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/2">
-                        <!-- This is the placeholder for 'Our Story' which we are keeping for now --><img src="https://placehold.co/600x400/D5A07B/FFFFFF?text=Our+Story" alt="Artisan making a bouquet" class="rounded-2xl shadow-xl w-full">
+                        <img src="https://placehold.co/600x400/D5A07B/FFFFFF?text=Our+Story" alt="Artisan making a bouquet" class="rounded-2xl shadow-xl w-full">
                     </div>
                     <div class="md:w-1/2 text-center md:text-left">
                         <h2 lang="en" class="font-display text-4xl font-bold mb-4">From a Dream to Your Doorstep</h2>
@@ -135,7 +136,7 @@
             </div>
         </section>
 
-        <!-- Our Creations Section --><section id="creations" class="hero-bg py-24">
+        <section id="creations" class="hero-bg py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 lang="en" class="font-display text-4xl font-bold mb-2">Our Signature Creations</h2>
@@ -145,7 +146,7 @@
                     <p lang="fr" class="text-gray-600 hidden">Fait main avec amour, pour des moments que vous chérirez.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
-                    <!-- Creation Card 1 --><div class="card">
+                    <div class="card">
                         <div class="product-image-container">
                             <img src="images/orchid-box.jpg" alt="Orchid Elegance Box">
                         </div>
@@ -158,12 +159,12 @@
                             
                             <p class="text-2xl font-bold text-[#5C4033] mb-4">$50.00</p>
                             <button data-product-en="Orchid Elegance Box" data-product-fr="Boîte Élégance Orchidée" class="btn-primary w-full open-modal-btn">
-                                <span lang="en">Inquire Now</span>
-                                <span lang="fr" class="hidden">Faire une Demande</span>
+                                <span lang="en">Order Now</span>
+                                <span lang="fr" class="hidden">Commander</span>
                             </button>
                         </div>
                     </div>
-                    <!-- Creation Card 2 --><div class="card">
+                    <div class="card">
                         <div class="product-image-container">
                             <img src="images/rose-bouquet.jpg" alt="Rose Blossom Bouquet">
                         </div>
@@ -176,8 +177,8 @@
                             
                              <p class="text-2xl font-bold text-[#5C4033] mb-4">$50.00</p>
                             <button data-product-en="Rose Blossom Bouquet" data-product-fr="Bouquet de Roses en Fleurs" class="btn-primary w-full open-modal-btn">
-                                <span lang="en">Inquire Now</span>
-                                <span lang="fr" class="hidden">Faire une Demande</span>
+                                <span lang="en">Order Now</span>
+                                <span lang="fr" class="hidden">Commander</span>
                             </button>
                         </div>
                     </div>
@@ -185,7 +186,7 @@
             </div>
         </section>
 
-        <!-- Contact Section - UPDATED --><section id="contact" class="py-24">
+        <section id="contact" class="py-24">
             <div class="container mx-auto px-6 text-center">
                  <div class="max-w-2xl mx-auto">
                     <h2 lang="en" class="font-display text-4xl font-bold mb-4">Get In Touch</h2>
@@ -198,7 +199,7 @@
                         <a href="mailto:bloom.and.bite.mtl@gmail.com" class="font-semibold text-[#5C4033] hover:text-[#D5A07B]">bloom.and.bite.mtl@gmail.com</a>
                     </div>
                     
-                    <!-- UPDATED action URL for Contact Form --><form action="https://formspree.io/f/xkgpgppb" method="POST" class="space-y-6 text-left">
+                    <form action="https://formspree.io/f/xkgpgppb" method="POST" class="space-y-6 text-left">
                         <div>
                             <label for="name" lang="en" class="block text-sm font-medium text-gray-700">Name</label>
                             <label for="name" lang="fr" class="block text-sm font-medium text-gray-700 hidden">Nom</label>
@@ -231,34 +232,34 @@
         </section>
     </main>
     
-    <!-- Footer --><footer class="bg-[#F7E4D4] py-8">
+    <footer class="bg-[#F7E4D4] py-8">
         <div class="container mx-auto px-6 text-center text-gray-600">
             <p lang="en">&copy; 2025 Bloom & Bite. All Rights Reserved.</p>
             <p lang="fr" class="hidden">&copy; 2025 Bloom & Bite. Tous Droits Réservés.</p>
              <div class="flex justify-center space-x-4 mt-4">
-                <!-- Instagram Link --><a href="https://www.instagram.com/_bloom_bite/?igsh=MTAwODg4eGZwMHRmdw%3D%3D" target="_blank" rel="noopener noreferrer" class="hover:text-[#D5A07B]">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 0C8.74 0 8.333.014 7.053.072 5.772.132 4.908.333 4.14.636c-.784.307-1.45.719-2.115 1.355C1.352 2.765.944 3.431.637 4.14c-.307.769-.508 1.634-.568 2.915C.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.281.261 2.146.568 2.915.307.784.719 1.45 1.355 2.115.635.636 1.301 1.048 2.115 1.355.769.307 1.634.508 2.915.568C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c1.281-.06 2.146-.261 2.915-.568.784-.307 1.45-.719 2.115-1.355.636-.635 1.048-1.301 1.355-2.115.307-.769.508-1.634.568-2.915.058-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.281-.261-2.146-.568-2.915-.307-.784-.719-1.45-1.355-2.115C21.235 2.765 20.569 2.1 19.859 1.794c-.769-.307-1.634-.508-2.915-.568C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.425.617.256 1.01.593 1.371.954.362.362.698.769.954 1.371.176.422.37.96.425 2.227.056 1.265.07 1.647.07 4.85s-.014 3.585-.07 4.85c-.055 1.17-.249 1.805-.425 2.227-.256.617-.593 1.01-.954 1.371-.362.362-.769.698-1.371.954-.422.176-.96.37-2.227.425-1.265.056-1.647.07-4.85.07s-3.585-.014-4.85-.07c-1.17-.055-1.805-.249-2.227-.425-.617-.256-1.01-.593-1.371-.954-.362-.362-.698-.769-.954-1.371-.176-.422-.37-.96-.425-2.227C2.16 15.667 2.146 15.26 2.146 12s.014-3.585.07-4.85c.055-1.17.249-1.805.425-2.227.256-.617.593-1.01.954-1.371.362-.362.769-.698 1.371-.954.422-.176.96-.37 2.227-.425C8.415 2.16 8.823 2.146 12 2.146zm0 3.635c-3.41 0-6.165 2.755-6.165 6.165s2.755 6.165 6.165 6.165 6.165-2.755 6.165-6.165-2.755-6.165-6.165-6.165zm0 10.165c-2.251 0-4.08-1.829-4.08-4.08s1.829-4.08 4.08-4.08 4.08 1.829 4.08 4.08-1.829 4.08-4.08 4.08zm4.958-9.044c0 .79-.64.79-.79 0s-.79-.64 0-.79.79.64.79.79z" clip-rule="evenodd" /></svg>
+                <a href="https://www.instagram.com/_bloom_bite/?igsh=MTAwODg4eGZwMHRmdw%3D%3D" target="_blank" rel="noopener noreferrer" class="hover:text-[#D5A07B]">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 0C8.74 0 8.333.014 7.053.072 5.772.132 4.908.333 4.14.636c-.784.307-1.45.719-2.115 1.355C1.352 2.765.944 3.431.637 4.14c-.307.769-.508 1.634-.568 2.915C.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.281.261 2.146.568 2.915.307.784.719 1.45 1.355 2.115.635.636 1.301 1.048 2.115 1.355.769.307 1.634.508 2.915.568C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c1.281-.06 2.146-.261 2.915-.568.784-.307 1.45-.719 2.115-1.355.636-.635 1.048-1.301 1.355-2.115.307-.769.508-1.634.568-2.915.058-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.281-.261-2.146-.568-2.915-.307-.784-.719-1.45-1.355-2.115C21.235 2.765 20.569 2.1 19.859 1.794c-.769-.307-1.634-.508-2.915-.568C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.425.617.256 1.01.593 1.371.954.362.362.698.769.954 1.371.176.422.37.96.425 2.227.056 1.265.07 1.647.07 4.85s-.014 3.585-.07 4.85c-.055 1.17-.249 1.805-.425 2.227-.256.617-.593 1.01-.954 1.371-.362.362-.769.698-1.371.954-.422.176-.96.37-2.227.425-1.265.056-1.647.07-4.85.07s-3.585-.014-4.85-.07c-1.17-.055-1.805-.249-2.227-.425-.617-.256-1.01-.593-1.371-.954-.362-.362-.698-.769-.954-1.371-.176.422-.37-.96-.425-2.227C2.16 15.667 2.146 15.26 2.146 12s.014-3.585.07-4.85c.055-1.17.249 1.805.425-2.227.256-.617.593 1.01.954-1.371.362.362.769.698 1.371-.954.422-.176.96.37 2.227.425C8.415 2.16 8.823 2.146 12 2.146zm0 3.635c-3.41 0-6.165 2.755-6.165 6.165s2.755 6.165 6.165 6.165 6.165-2.755 6.165-6.165-2.755-6.165-6.165-6.165zm0 10.165c-2.251 0-4.08-1.829-4.08-4.08s1.829-4.08 4.08-4.08 4.08 1.829 4.08 4.08-1.829 4.08-4.08 4.08zm4.958-9.044c0 .79-.64.79-.79 0s-.79-.64 0-.79.79.64.79.79z" clip-rule="evenodd" /></svg>
                 </a>
-                <!-- Optional: Other social media links (e.g., Facebook, Twitter) --><!-- You can remove or replace these if you only use Instagram --><a href="#" class="hover:text-[#D5A07B]"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                <a href="#" class="hover:text-[#D5A07B]"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
                 <a href="#" class="hover:text-[#D5A07B]"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.A65a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218 1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm-2.16 4.872a.75.75 0 01.75.75v1.185c0 .414.336.75.75.75h1.185a.75.75 0 010 1.5H11.655a.75.75 0 01-.75-.75V7.622a.75.75 0 01.75-.75zm5.344-1.334a.75.75 0 00-.75-.75H13.5a.75.75 0 000 1.5h1.434l-3.96 3.96a.75.75 0 001.06 1.06l3.96-3.96v1.434a.75.75 0 001.5 0V6.288a.75.75 0 00-.75-.75zM4.868 12.315c0 3.442 2.793 6.235 6.235 6.235s6.235-2.793 6.235-6.235S15.545 6.08 12.103 6.08 4.868 8.873 4.868 12.315z" clip-rule="evenodd" /></svg></a>
             </div>
         </div>
     </footer>
 
-        <!-- Inquiry Modal - UPDATED --><div id="inquiry-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4">
+        <div id="inquiry-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4">
         <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full relative transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
             <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <h3 class="font-display text-2xl font-bold mb-2">
-                <span lang="en">Inquiry for </span>
-                <span lang="fr" class="hidden">Demande pour </span>
+                <span lang="en">Order for </span>
+                <span lang="fr" class="hidden">Commande pour </span>
                 <span id="modal-product-name"></span>
             </h3>
             <p lang="en" class="text-gray-600 mb-6">Please provide your details below. We'll contact you shortly to finalize your order!</p>
             <p lang="fr" class="text-gray-600 mb-6 hidden">Veuillez fournir vos coordonnées ci-dessous. Nous vous contacterons sous peu pour finaliser votre commande !</p>
             
-            <!-- UPDATED action URL for Inquiry Form --><form action="https://formspree.io/f/xvgvgvvq" method="POST" class="space-y-4">
+            <form action="https://formspree.io/f/xvgvgvvq" method="POST" class="space-y-4">
                 <input type="hidden" id="product_inquiry" name="product_inquiry">
                 <div>
                     <label for="modal-name" lang="en" class="block text-sm font-medium text-gray-700">Name</label>
@@ -284,8 +285,8 @@
                 </div>
                 <div class="text-center pt-2">
                     <button type="submit" class="btn-primary w-full">
-                        <span lang="en">Submit Inquiry</span>
-                        <span lang="fr" class="hidden">Soumettre la Demande</span>
+                        <span lang="en">Submit Order</span>
+                        <span lang="fr" class="hidden">Soumettre la Commande</span>
                     </button>
                 </div>
             </form>
@@ -415,4 +416,3 @@
 
 </body>
 </html>
-
