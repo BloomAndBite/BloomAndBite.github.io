@@ -30,16 +30,17 @@
         }
         /* New style for product image containers to ensure consistent height and proper scaling */
         .product-image-container {
-            min-height: 320px; /* Equivalent to h-80, setting a minimum for consistent card size */
+            height: 320px; /* Set a fixed height for consistent card size */
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 1rem; /* Add padding around the image */
         }
         .product-image-container img {
-            width: 100%;
-            height: auto; /* Allow height to adjust naturally */
-            object-fit: contain; /* Show entire image */
+            width: auto; /* Allow width to adjust based on height */
+            height: 100%; /* Make the image fill the container's height */
+            object-fit: contain; /* Show entire image, respect aspect ratio */
+            max-width: 100%; /* Ensure image doesn't overflow container width */
         }
     </style>
 </head>
@@ -269,4 +270,5 @@
 
 </body>
 </html>
+
 
